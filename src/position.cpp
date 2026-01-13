@@ -4,27 +4,6 @@
 #include "bitboard.h"
 #include "eval.h"
 
-void pins_and_atts_to(const position_t* pos, const int sq, const int att_side, const int pin_side, u64* pinned,
-  u64* pinners, u64* att, u64* r_att){
-  const u64 occ_att=pos->occ[att_side];
-  const u64 occ_pin=pos->occ[pin_side];
-  const u64 occ=occ_att|pos->occ[att_side^1];
-  const u64 bq=(pos->piece_occ[bishop]|pos->piece_occ[queen])&occ_att;
-  const u64 rq=(pos->piece_occ[rook]|pos->piece_occ[queen])&occ_att;
-  *att=bishop_att(occ,sq);
-  *r_att=rook_att(occ,sq);
-  u64 b=(*att^bishop_att(occ^(occ_pin&*att),sq))&bq;
-  b|=(*r_att^rook_att(occ^(occ_pin&*r_att),sq))&rq;
-  *pinned=*pinners=0;
-  for_each_set_bit(b,[&](const u64 bit){
-    const int p_sq=bsf(bit);
-    if(const u64 line=bline[sq][p_sq]){
-      *pinned|=line;
-      *pinners|=bb(static_cast<u8>(p_sq));
-    }
-  });
-  *pinned&=occ_pin;
-}
 void set_pins_and_checks(position_t* pos){
   u64 att,r_att;
   const int k_sq=pos->k_sq[pos->side];
