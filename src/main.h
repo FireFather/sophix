@@ -13,7 +13,7 @@
 
 inline const std::string engine="Sophix";
 inline const std::string version="1.0";
-inline const std::string author="Me";
+inline const std::string author="Milos Tatarevic";
 
 #define SC static_cast
 #define SO std::cout
