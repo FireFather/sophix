@@ -1,4 +1,14 @@
 # sophix
+[![Release][release-badge]][release-link]
+[![Commits][commits-badge]][commits-link]
+
+![Downloads][downloads-badge]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+
+[![License][license-badge]][license-link]
+[![Contributors][contributors-shield]][contributors-url]
+[![Issues][issues-shield]][issues-url]
 
 Xiphos chess engine (https://github.com/milostatarevic/xiphos)
 
