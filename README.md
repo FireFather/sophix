@@ -43,6 +43,9 @@ Nodes: 3195901860
 Time: 4266ms
 NPS: 749156554
 ```
+## ⚙️To Build
+- Visual Studio -> use the included project files: sophix.sln or sophix.vcxproj
+- MSYS2 mingw64 -> use the included shell script: make_it.sh
 
 [contributors-url]: https://github.com/FireFather/sophix/graphs/contributors
 [forks-url]: https://github.com/FireFather/sophix/network/members
